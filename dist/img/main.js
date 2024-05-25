@@ -17,7 +17,3 @@ hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("hamburger-active");
   hamburgerList.classList.toggle("hidden");
 });
-
-// SMTPJS API
-
-// ambil id humberger untuk menampilkan tombol
