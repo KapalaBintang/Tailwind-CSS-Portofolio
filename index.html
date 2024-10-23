@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>'Abdul 'Aziz Portofolio using Tailwind CSS</title>
     <link href="src/output.css" rel="stylesheet" />
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
   </head>
@@ -11,7 +12,7 @@
 
     <!-- Navbar Section Start -->
     <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10 lg:px-20  ">
-      <div class="container">
+      <div class="w-full">
         <div class="flex items-center justify-between relative">
           <div class="px-4">
             <a href="#home" class="text-lg font-bold text-primary block py-5 lg:text-2xl ">Kapala Bintang</a>
@@ -50,18 +51,18 @@
 
     <!-- Hero Section Start -->
     <section id="home" class="pt-24 lg:ml-20">
-      <div class="container">
+      <div class="w-full">
         <div class="flex flex-wrap ">
-          <div class="w-full self-center mt-16 p-4 lg:w-1/2 ">
+          <div class="w-full self-center mt-16 p-4 lg:w-1/2">
             <h1 class="text-base font-semibold text-primary md:text-xl">Hello everyone ✌! I am <span class="block text-4xl font-bold text-secondary mt-4 md:text-5xl">'Abdul 'Aziz</span></h1>
-            <h2 class="text-xl font-medium text-slate-700 mb-3 md:text-2xl md:mt-1">Student</h2>
-            <p class="text-slate-500 font-medium text-sm mb-10 md:text-base leading-relaxed">I'm an enthusiastic high school student on an exciting journey to master the world of programming.</p>
-
+            <h2 class="text-xl font-medium text-slate-700 mb-3 md:text-2xl md:mt-1">Full Stack Developer</h2>
+            <p class="text-slate-500 font-medium text-sm mb-10 md:text-base leading-relaxed">I am a Computer Science student at Universitas Sriwijaya, passionate about building efficient web applications and continuously improving my programming skills.</p>
+        
             <div class="flex gap-7">
-              <a href="https://www.instagram.com/abdul_aziz_2412/" target="_blank" class="  font-semibold bg-primary rounded-sm py-1 px-3 border transition duration-500 ease-in-out border-black text-white  hover:opacity-80 active:bg-slate-600 md:py-2 md:px-6">Contact Me</a>
-              
+                <a href="https://wa.me/62895637594068" target="_blank" class="font-semibold bg-primary rounded-sm py-1 px-3 border transition duration-500 ease-in-out border-black text-white hover:opacity-80 active:bg-slate-600 md:py-2 md:px-6">Contact Me</a>
             </div>
-          </div>
+        </div>
+        
           <div class="w-full self-end px-4 lg:w-1/2 ">
             <div class="relative lg:right-0 lg:mt-0 ">
               <img src="dist/img/profile.png" class=" mx-auto max-w-full lg:mr-64 lg:w-80" width="300"  alt="" />
@@ -78,17 +79,19 @@
 
     <!-- About section start -->
     <section id="about" class="pt-10 pb-32 lg:ml-20 lg:pt-32">
-      <div class="container">
+      <div class="w-full">
         <div class="flex flex-wrap">
           <div class="w-full px-4 mb-5 lg:w-1/2">
-            <h3 class="uppercase font-bold text-primary text-lg leading-relaxed ">About Me</h3>
+            <h3 class="uppercase font-bold text-primary text-lg leading-relaxed">About Me</h3>
             <h2 class="font-bold text-3xl mb-2 max-w-lg">Let's code!</h2>
-            <p class="text-slate-500 text-base font-semibold">Balancing school life and coding, I'm diving into various programming languages, exploring the vast tech landscape, and sharing my experiences along the way. Join me as I tackle projects, learn new concepts, and turn my coding dreams into reality, one line of code at a time. Let's code and grow together!🔥</p>
-          </div>
+            <p class="text-slate-500 text-base font-semibold">I have been learning programming since high school, and I’ve completed several real-world projects along the way. Balancing school life and coding, I explore various programming languages and delve into the tech landscape. Join me as I tackle exciting projects, learn new concepts, and turn my coding dreams into reality, one line of code at a time. Let’s code and grow together!🔥</p>
+        </div>
+        
           <div class="w-full px-4 lg:w-1/2">
             <h3 class=" font-bold text-slate-900 text-xl leading-relaxed lg:pt-10 ">Be friend!</h3>
             <p class="text-slate-500 text-base font-semibold">Check my social media below!</p>
             <div class="flex items-center gap-2 mt-5 ">
+              
               <a href="https://www.instagram.com/abdul_aziz_2412/" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-full border border-slate-300 border-spacing-0 hover:bg-black hover:text-white transition duration-150"><i class="fa-brands fa-instagram text-xl  "></i></a>
               <a href="https://github.com/KapalaBintang" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-full border border-slate-300 border-spacing-0 hover:bg-black hover:text-white transition duration-150"><i class="fa-brands fa-github text-xl "></i></a>
               <a href="https://www.linkedin.com/in/abdul-aziz-852802280/" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-full border border-slate-300 border-spacing-0 hover:bg-black hover:text-white transition duration-150"><i class="fa-brands fa-linkedin text-xl  "></i></a>
@@ -100,45 +103,69 @@
     </section>
     <!-- About section end -->
 
+    <!-- stack -->
+    <!-- <section id="stack" class="pt-32 pb-16 lg:ml-20">
+      <div class="w-full">
+          <div class="text-center mb-16">
+              <h3 class="font-bold text-primary text-lg leading-relaxed uppercase mb-2 lg:text-xl">My Stack</h3>
+              <h2 class="font-bold text-3xl mb-2">Technologies I Use</h2>
+              <p class="max-w-screen-sm mx-auto text-slate-500">Here are some of the technologies I've worked with to build amazing projects.</p>
+          </div>
+          <div class="flex justify-center items-center flex-wrap gap-2">
+            <div>
+              <i class="fa-brands fa-html5 text-4xl block"></i>
+            </div>
+            <div>
+              <i class="fa-brands fa-css3 text-4xl block"></i>
+            </div>
+            
+          <div>
+            <i class="fa-brands fa-react text-4xl"></i>
+          </div>
+            
+           
+
+
+          </div>
+      </div>
+  </section> -->
+
     <!-- Portofolio section start -->
     <section id="portofolio" class="pt-36 pb-16 lg:pt-32 bg-slate-800">
-      <div class="container">
+      <div class="w-full">
         <div class="w-full px-4">
           <div class="max-w-full mx-auto text-center mb-16 text-white">
-            <h3 class="font-bold text-primary text-lg leading-relaxed uppercase mb-2 lg:text-xl">Portofolio</h3>
-            <h2 class="font-bold text-3xl mb-2">New Projects</h2>
-            <p class="max-w-screen-sm mx-auto text-slate-200">Check out my latest coding projects and see what I've been up to. From cool web designs to fun experiments, this is where I share all the stuff I've been working on. Dive in and take a look around.</p>
-          </div>
+            <h3 class="font-bold text-primary text-lg leading-relaxed uppercase mb-2 lg:text-xl">Portfolio</h3>
+            <h2 class="font-bold text-3xl mb-2">My Projects</h2>
+            <p class="max-w-screen-sm mx-auto text-slate-200">Explore my recent projects and discover what I’ve been working on. From innovative web applications to practical solutions, this section showcases my journey as a developer. Dive in and see how I turn ideas into reality!</p>
+        </div>
+        
 
 
           <div class=" max-w-full flex flex-wrap justify-center w-full xl:w-10/12 xl:mx-auto">
+           
             <div class="p-4 mb-12 md:w-1/2 ">
               <div class="rounded-md overflow-hidden shadow-md">
-                <img src="dist/img/portofolio img/4.png" alt="Color Flipper Web img" width="w-full" >
+                <img src="dist/img/portofolio img/2.png" alt="SRIFOTON 2024 web img" width="w-full" >
               </div>
-              <a href="https://kapalabintang.github.io/Color-Flipper.github.io/" target="_blank" class="text-primary font-semibold text-xl block mt-2 transition duration-150 hover:text-orange-800">Color Flipper</a>
-              <p class="max-w-screen-sm text-base text-slate-200 mt-2">the first website I ever created. It's a simple tool that lets you flip through different colors with just a click. Check it out and see what you think!</p>
+              <a href="https://srifoton.hmifunsri.com/" target="_blank" class="text-primary font-semibold text-xl block mt-2 transition duration-150 hover:text-orange-800">SRIFOTON 2024</a>
+              <p class="max-w-screen-sm text-base text-slate-200 mt-2">SRIFOTON (Sriwijaya Informatics Exhibition) 2024 is an annual national IT competition that provides a platform for IT students across Indonesia to develop and showcase their interests and talents in the IT field. SRIFOTON 2024 carries the theme "Digital Innovation for a Sustainable Future." SRIFOTON 2024 will host competitions, workshops, and talk shows that will cover topics such as Web Development and Personal Branding in the digital era.</p>
             </div>
             <div class="p-4 mb-12 md:w-1/2 ">
               <div class="rounded-md overflow-hidden shadow-md">
-                <img src="dist/img/portofolio img/2.png" alt="To-Do List Web img" width="w-full" >
+                <img src="dist/img/portofolio img/3.png" alt=" Manajamen UGKMB Web img" width="w-full" >
               </div>
-              <a href="https://kapalabintang.github.io/Add-to-list.github.io/" target="_blank" class="text-primary font-semibold text-xl block mt-2 transition duration-150 hover:text-orange-800">To-Do List</a>
-              <p class="max-w-screen-sm text-base text-slate-200 mt-2">This website is a straightforward tool to help you keep track of your tasks and stay organized. Give it a try and see how it can help you manage your day!</p>
+              <a href="https://manajamen-ugkmb.vercel.app/" target="_blank" class="text-primary font-semibold text-xl block mt-2 transition duration-150 hover:text-orange-800">Manajamen UGKMB</a>
+              <p class="max-w-screen-sm text-base text-slate-200 mt-2">
+                I created a landing page for the Management Department at Universitas Graha Karya Muara Bulian. This project provides clear and engaging information about the program, facilities, and activities for prospective students. Using Next.js and Tailwind CSS, I designed a user-friendly and responsive page that makes it easy to explore the content.
+              </p>
             </div>
             <div class="p-4 mb-12 md:w-1/2 ">
               <div class="rounded-md overflow-hidden shadow-md">
-                <img src="dist/img/portofolio img/3.png" alt="Counter Web img" width="w-full" >
+                <img src="dist/img/portofolio img/1.png" alt="Gemini clone web img" width="w-full" >
               </div>
-              <a href="https://kapalabintang.github.io/Counter/" target="_blank" class="text-primary font-semibold text-xl block mt-2 transition duration-150 hover:text-orange-800">School Task</a>
-              <p class="max-w-screen-sm text-base text-slate-200 mt-2">This website is a simple tool that counts the number of times a button is clicked. Check it out and see it in action!</p>
-            </div>
-            <div class="p-4 mb-12 md:w-1/2 ">
-              <div class="rounded-md overflow-hidden shadow-md">
-                <img src="dist/img/portofolio img/1.png" alt="School Task web img" width="w-full" >
-              </div>
-              <a href="https://kapalabintang.github.io/" target="_blank" class="text-primary font-semibold text-xl block mt-2 transition duration-150 hover:text-orange-800">School Task</a>
-              <p class="max-w-screen-sm text-base text-slate-200 mt-2">This is a project assigned by my teacher that integrates HTML, CSS, PHP, and XAMPP. It's a platform where I showcase my understanding of these technologies through various exercises and tasks. Take a look around to see what I've accomplished!</p>
+              <a href="https://gemini-clone-web.vercel.app/" target="_blank" class="text-primary font-semibold text-xl block mt-2 transition duration-150 hover:text-orange-800">Gemini Clone</a>
+              <p class="max-w-screen-sm text-base text-slate-200 mt-2"> This is a clone of the Gemini website. It features a clean and modern design with modern and clean animations.</p>
             </div>
           </div>
         </div>
@@ -148,7 +175,7 @@
 
     <!-- Learning source section start -->
     <section id="learningSources" class="pt-36 pb-32 lg:pt-32">
-      <div class="container">
+      <div class="w-full">
         <div class="px-4 w-full">
           <div class="max-w-full mx-auto text-center mb-16 ">
             <h3 class="font-bold text-primary text-lg leading-relaxed uppercase mb-2 lg:text-xl">Learning Sources</h3>
@@ -192,7 +219,7 @@
 
     <!-- Form section start -->
     <section id="contact"  class=" pt-36 pb-16 lg:pt-32 bg-slate-800">
-      <div class="container">
+      <div class="w-full">
         <div class="w-full px-4">
           <div class="max-w-full mx-auto text-center mb-16 text-white">
             <h3 class="font-bold text-primary text-lg leading-relaxed uppercase mb-2 lg:text-xl">Contact</h3>
@@ -227,7 +254,7 @@
 
     <!-- Footer section start -->
     <div class="pt-24 pb-4 lg:ml-20 ">
-      <div class="container lg:mx-auto">
+      <div class="w-full lg:mx-auto">
         <div class="flex flex-wrap">
           <div class="w-full px-4 mb-12 text-black font-medium lg:w-1/3">
             <h2 class="text-4xl font-bold mb-5">Kapala Bintang</h2>
@@ -261,6 +288,7 @@
     <div class="pb-6 bg-black border-t border-slate-500">
       <div class="w-full border-t border-black px-4">
         <div class="flex items-center gap-4 justify-center mt-6">
+          <a href="https://wa.me/62895637594068" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-full border text-white border-slate-300 border-spacing-0 hover:bg-white hover:text-black transition duration-150"><i class="fa-brands fa-whatsapp text-xl"></i></a>
           <a href="https://www.instagram.com/abdul_aziz_2412/" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-full border text-white border-slate-300 border-spacing-0 hover:bg-white hover:text-black transition duration-150"><i class="fa-brands fa-instagram text-xl  "></i></a>
           <a href="https://github.com/KapalaBintang" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-full border text-white border-slate-300 border-spacing-0 hover:bg-white hover:text-black transition duration-150"><i class="fa-brands fa-github text-xl "></i></a>
           <a href="https://www.linkedin.com/in/abdul-aziz-852802280/" target="_blank" class="w-9 h-9 flex items-center justify-center text-white rounded-full border border-slate-300 border-spacing-0 hover:bg-white hover:text-black transition duration-150"><i class="fa-brands fa-linkedin text-xl  "></i></a>
@@ -274,6 +302,7 @@
     
     
     <script src="dist/img/main.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     
     
      
