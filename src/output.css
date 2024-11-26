@@ -22,7 +22,11 @@
 
 ::before,
 ::after {
+<<<<<<< HEAD
   --tw-content: "";
+=======
+  --tw-content: '';
+>>>>>>> 738692e901c6672b2a80b69cf4b96eb80b7a934c
 }
 
 /*
@@ -44,7 +48,11 @@ html,
   -moz-tab-size: 4;
   /* 3 */
   -o-tab-size: 4;
+<<<<<<< HEAD
   tab-size: 4;
+=======
+     tab-size: 4;
+>>>>>>> 738692e901c6672b2a80b69cf4b96eb80b7a934c
   /* 3 */
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
@@ -89,7 +97,11 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 
 abbr:where([title]) {
   -webkit-text-decoration: underline dotted;
+<<<<<<< HEAD
   text-decoration: underline dotted;
+=======
+          text-decoration: underline dotted;
+>>>>>>> 738692e901c6672b2a80b69cf4b96eb80b7a934c
 }
 
 /*
@@ -236,9 +248,15 @@ select {
 */
 
 button,
+<<<<<<< HEAD
 input:where([type="button"]),
 input:where([type="reset"]),
 input:where([type="submit"]) {
+=======
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
+>>>>>>> 738692e901c6672b2a80b69cf4b96eb80b7a934c
   -webkit-appearance: button;
   /* 1 */
   background-color: transparent;
@@ -285,7 +303,11 @@ Correct the cursor style of increment and decrement buttons in Safari.
 2. Correct the outline style in Safari.
 */
 
+<<<<<<< HEAD
 [type="search"] {
+=======
+[type='search'] {
+>>>>>>> 738692e901c6672b2a80b69cf4b96eb80b7a934c
   -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
@@ -378,8 +400,12 @@ textarea {
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
 
+<<<<<<< HEAD
 input::-moz-placeholder,
 textarea::-moz-placeholder {
+=======
+input::-moz-placeholder, textarea::-moz-placeholder {
+>>>>>>> 738692e901c6672b2a80b69cf4b96eb80b7a934c
   opacity: 1;
   /* 1 */
   color: #9ca3af;
@@ -447,9 +473,13 @@ video {
   display: none;
 }
 
+<<<<<<< HEAD
 *,
 ::before,
 ::after {
+=======
+*, ::before, ::after {
+>>>>>>> 738692e901c6672b2a80b69cf4b96eb80b7a934c
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -459,6 +489,7 @@ video {
   --tw-skew-y: 0;
   --tw-scale-x: 1;
   --tw-scale-y: 1;
+<<<<<<< HEAD
   --tw-pan-x: ;
   --tw-pan-y: ;
   --tw-pinch-zoom: ;
@@ -472,6 +503,21 @@ video {
   --tw-numeric-spacing: ;
   --tw-numeric-fraction: ;
   --tw-ring-inset: ;
+=======
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+>>>>>>> 738692e901c6672b2a80b69cf4b96eb80b7a934c
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
   --tw-ring-color: rgb(59 130 246 / 0.5);
@@ -479,6 +525,7 @@ video {
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
+<<<<<<< HEAD
   --tw-blur: ;
   --tw-brightness: ;
   --tw-contrast: ;
@@ -501,6 +548,30 @@ video {
   --tw-contain-layout: ;
   --tw-contain-paint: ;
   --tw-contain-style: ;
+=======
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+>>>>>>> 738692e901c6672b2a80b69cf4b96eb80b7a934c
 }
 
 ::backdrop {
@@ -513,6 +584,7 @@ video {
   --tw-skew-y: 0;
   --tw-scale-x: 1;
   --tw-scale-y: 1;
+<<<<<<< HEAD
   --tw-pan-x: ;
   --tw-pan-y: ;
   --tw-pinch-zoom: ;
@@ -526,6 +598,21 @@ video {
   --tw-numeric-spacing: ;
   --tw-numeric-fraction: ;
   --tw-ring-inset: ;
+=======
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+>>>>>>> 738692e901c6672b2a80b69cf4b96eb80b7a934c
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
   --tw-ring-color: rgb(59 130 246 / 0.5);
@@ -533,6 +620,7 @@ video {
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
+<<<<<<< HEAD
   --tw-blur: ;
   --tw-brightness: ;
   --tw-contrast: ;
@@ -555,6 +643,30 @@ video {
   --tw-contain-layout: ;
   --tw-contain-paint: ;
   --tw-contain-style: ;
+=======
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+>>>>>>> 738692e901c6672b2a80b69cf4b96eb80b7a934c
 }
 
 .container {
@@ -647,6 +759,7 @@ video {
   top: -3rem;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD .-top-1\/3 {
   top: -33.333333%;
 }
@@ -668,6 +781,9 @@ video {
 }
 
 =======>>>>>>>eb69f63 (Creating a Portofolio using Tailwind CSS) .-z-10 {
+=======
+.-z-10 {
+>>>>>>> 738692e901c6672b2a80b69cf4b96eb80b7a934c
   z-index: -10;
 }
 
@@ -712,11 +828,15 @@ video {
   margin-top: 4rem;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD .mt-16 {
   margin-top: 4rem;
 }
 
 =======>>>>>>>eb69f63 (Creating a Portofolio using Tailwind CSS) .mt-2 {
+=======
+.mt-2 {
+>>>>>>> 738692e901c6672b2a80b69cf4b96eb80b7a934c
   margin-top: 0.5rem;
 }
 
@@ -1141,10 +1261,15 @@ video {
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   --tw-backdrop-blur: blur(4px);
+<<<<<<< HEAD
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity)
     var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
   backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
     var(--tw-backdrop-sepia);
+=======
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+>>>>>>> 738692e901c6672b2a80b69cf4b96eb80b7a934c
 }
 
 .hamburger-line {
