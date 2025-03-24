@@ -36,11 +36,9 @@ export default function PortfolioSection() {
       image: "/portofolio-image/ugkmb.jpg?height=600&width=1200",
       technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
       features: [
-        "Department information and course offerings",
+        "Department informations",
         "Faculty profiles and expertise",
-        "Student resources and materials",
         "News and events calendar",
-        "Contact and inquiry form",
       ],
       category: "Full Stack Development",
       year: "2024",
