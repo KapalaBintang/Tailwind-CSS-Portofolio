@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Block admin pages from being indexed
+Disallow: /admin/
+Disallow: /login/
+
+# Allow all bots to index everything else
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://abdul-aziz.my.id/sitemap.xml
