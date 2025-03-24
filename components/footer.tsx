@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input"
 import Link from "next/link"
 import { useState } from "react"
 import { subscribeToNewsletter } from "@/lib/client-api"
+import { socialLinks } from "@/data/socialMedia"
 
 export default function Footer() {
   const [email, setEmail] = useState("")
@@ -70,43 +71,25 @@ export default function Footer() {
           {/* Column 1: About */}
           <div className="space-y-4">
             <Link href="/" className="text-2xl font-bold text-primary inline-block">
-              Abdul 'Aziz
+              'Abdul 'Aziz
             </Link>
             <p className="text-muted-foreground">
               A passionate fullstack developer dedicated to creating elegant, efficient, and user-friendly web
               applications.
             </p>
             <div className="flex space-x-3 pt-2">
-              <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="rounded-full h-9 w-9 hover:bg-primary/10 hover:text-primary"
-                >
-                  <Github className="h-5 w-5" />
-                  <span className="sr-only">GitHub</span>
-                </Button>
-              </Link>
-              <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="rounded-full h-9 w-9 hover:bg-primary/10 hover:text-primary"
-                >
-                  <Linkedin className="h-5 w-5" />
-                  <span className="sr-only">LinkedIn</span>
-                </Button>
-              </Link>
-              <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="rounded-full h-9 w-9 hover:bg-primary/10 hover:text-primary"
-                >
-                  <Twitter className="h-5 w-5" />
-                  <span className="sr-only">Twitter</span>
-                </Button>
-              </Link>
+              {socialLinks.map((link) => (
+                <Link key={link.label} href={link.href} target="_blank" rel="noopener noreferrer">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="rounded-full h-9 w-9 hover:bg-primary/10 hover:text-primary"
+                  >
+                    <link.icon className="h-5 w-5" />
+                    <span className="sr-only">{link.label}</span>
+                  </Button>
+                </Link>
+              ))}
             </div>
           </div>
 
@@ -154,16 +137,17 @@ export default function Footer() {
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary" />
                 <a
-                  href="mailto:abdul.aziz@example.com"
+                  href="mailto:bintangkapala@gmail.com"
+                  target="_blank"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  abdul.aziz@example.com
+                  bintangkapala@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
-                <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary transition-colors">
-                  +123 456 7890
+                <a href="https://wa.me/62895637594068" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+                  +62 895-6375-94068
                 </a>
               </li>
               <li className="flex items-start gap-2">
@@ -238,10 +222,10 @@ export default function Footer() {
         {/* Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-sm text-muted-foreground mb-4 md:mb-0">
-            © {new Date().getFullYear()} Abdul 'Aziz. All rights reserved.
+            © {new Date().getFullYear()} 'Abdul 'Aziz. All rights reserved.
           </div>
           <div className="text-sm text-muted-foreground flex items-center">
-            Made with <Heart className="h-4 w-4 text-red-500 mx-1" /> using Next.js, Tailwind CSS, and Firebase
+            Made with <Heart className="h-4 w-4 text-red-500 mx-1" /> by 'Abdul 'Aziz
           </div>
         </div>
       </div>

@@ -85,7 +85,7 @@ export default function ExperienceSection() {
                     </div>
 
                     <h3 className="text-xl font-bold mb-1">{experience.title}</h3>
-                    <p className="text-muted-foreground mb-4 flex items-center gap-1">
+                    <p className={`flex items-center gap-1 text-muted-foreground mb-4 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
                       <Briefcase className="h-4 w-4" />
                       {experience.company}
                     </p>
