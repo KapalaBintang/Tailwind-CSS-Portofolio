@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { AlertCircle, Loader2, Send, CheckCircle } from "lucide-react"
 import AdminNavbar from "@/components/admin-navbar"
-import RichTextEditor from "@/components/admin/rich-text-editor"
+import Editor from "@/components/admin/editor"
 import FileUpload from "@/components/admin/file-upload"
 import { db } from "@/lib/firebase"
 import { collection, getDocs, query, where } from "firebase/firestore"
@@ -206,10 +206,9 @@ export default function SendEmailPage() {
 
               <div className="space-y-2">
                 <Label htmlFor="message">Message</Label>
-                <RichTextEditor
+                <Editor
                   value={formState.message}
                   onChange={(value) => setFormState((prev) => ({ ...prev, message: value }))}
-                  placeholder="Compose your email..."
                 />
               </div>
 
@@ -242,4 +241,3 @@ export default function SendEmailPage() {
     </div>
   )
 }
-

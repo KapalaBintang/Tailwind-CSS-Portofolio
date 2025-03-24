@@ -66,11 +66,7 @@ export default function AdminNavbar() {
       href: "/admin/send-email",
       icon: <Send className="h-5 w-5" />,
     },
-    {
-      name: "Settings",
-      href: "/admin/settings",
-      icon: <Settings className="h-5 w-5" />,
-    },
+    
   ]
 
   return (

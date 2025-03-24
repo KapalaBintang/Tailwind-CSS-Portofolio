@@ -21,6 +21,8 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  // Add this to suppress hydration warnings
+  reactStrictMode: false,
 }
 
 mergeConfig(nextConfig, userConfig)
