@@ -13,7 +13,7 @@ export default function SeoHead({
   title = "Abdul 'Aziz | Fullstack Developer & Web Engineer",
   description = "Professional portfolio of Abdul 'Aziz, a skilled Fullstack Developer specializing in modern web technologies, React, Next.js, and full-stack development solutions.",
   keywords = ["fullstack developer", "web developer", "React developer", "Next.js developer", "portfolio", "Abdul Aziz"],
-  ogImage = "/https://abdul-aziz.my.id/icon.ico",
+  ogImage = "https://abdul-aziz.my.id/icon.ico",
   canonicalUrl = "https://abdul-aziz.my.id/",
 }: SeoHeadProps) {
   return (
