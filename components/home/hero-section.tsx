@@ -1,10 +1,9 @@
-"use client"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { socialLinks } from "@/datas/socialMedia"
-import { ArrowRight } from "lucide-react"
-import Link from "next/link"
-
+"use client";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { socialLinks } from "@/datas/socialMedia";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -13,40 +12,28 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col space-y-6">
             <div className="inline-block">
-              <span className="px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full">
-                Welcome to my portfolio
-              </span>
+              <span className="px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full">Welcome to my portfolio</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
               Hi, I'm{" "}
               <span className="text-primary relative inline-block">
-                Abdul 'Aziz
+                'Abdul 'Aziz
                 <span className="absolute -bottom-2 left-0 w-full h-1 bg-primary/30 rounded-full"></span>
               </span>
               <span className="block mt-2">Fullstack Developer</span>
             </h1>
 
-            <p className="text-lg text-muted-foreground max-w-lg">
-              I build exceptional and accessible digital experiences for the web. Focused on creating clean,
-              user-friendly interfaces with modern technologies.
-            </p>
+            <p className="text-lg text-muted-foreground max-w-lg">I build exceptional and accessible digital experiences for the web. Focused on creating clean, user-friendly interfaces with modern technologies.</p>
 
             <div className="flex flex-wrap gap-4">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 group"
-              >
-               <a href="#portfolio" className="flex items-center">
-                View My Work
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-               </a>
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 group">
+                <a href="#portfolio" className="flex items-center">
+                  View My Work
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary/20 hover:border-primary/50 hover:bg-primary/5"
-              >
+              <Button size="lg" variant="outline" className="border-primary/20 hover:border-primary/50 hover:bg-primary/5">
                 <Link href="https://www.instagram.com/abdul_aziz_2412/" target="_blank" rel="noopener noreferrer" className="flex items-center">
                   Contact Me
                 </Link>
@@ -69,14 +56,7 @@ export default function HeroSection() {
             <div className="relative w-full max-w-md mx-auto">
               <div className="aspect-square overflow-hidden rounded-full border-4 border-primary/20 p-2 bg-gradient-to-br from-background to-background/80 shadow-2xl">
                 <div className="rounded-full overflow-hidden bg-primary/5 h-full w-full relative">
-                  <Image
-                    src="/profile-3.jpg?height=600&width=600"
-                    alt="Abdul 'Aziz"
-                    width={1000}
-                    height={1000}
-                    className="object-cover w-full h-full"
-                    priority
-                  />
+                  <Image src="/profile-3.jpg?height=600&width=600" alt="'Abdul 'Aziz" width={1000} height={1000} className="object-cover w-full h-full" priority />
 
                   {/* Overlay gradient */}
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-60"></div>
@@ -94,6 +74,5 @@ export default function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

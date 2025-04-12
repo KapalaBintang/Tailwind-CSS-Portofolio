@@ -22,6 +22,7 @@ export default function SendEmailPage() {
   const [success, setSuccess] = useState(false)
   const [subscribers, setSubscribers] = useState<string[]>([])
   const [loadingSubscribers, setLoadingSubscribers] = useState(true)
+  const [sendToAllSubscribers, setSendToAllSubscribers] = useState(false)
 
   const [formState, setFormState] = useState({
     from: "",
@@ -65,7 +66,16 @@ export default function SendEmailPage() {
       // Create FormData to handle files
       const formData = new FormData()
       formData.append("from", formState.from)
-      formData.append("to", formState.to)
+      
+      // Handle recipients based on sendToAllSubscribers flag
+      if (sendToAllSubscribers) {
+        formData.append("to", JSON.stringify(subscribers))
+        formData.append("sendToAll", "true")
+      } else {
+        formData.append("to", formState.to)
+        formData.append("sendToAll", "false")
+      }
+      
       formData.append("subject", formState.subject)
       formData.append("message", formState.message)
 
@@ -159,7 +169,21 @@ export default function SendEmailPage() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="to">To</Label>
+                <div className="flex justify-between items-center">
+                  <Label htmlFor="to">To</Label>
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      id="sendToAll"
+                      checked={sendToAllSubscribers}
+                      onChange={(e) => setSendToAllSubscribers(e.target.checked)}
+                      disabled={isLoading || subscribers.length === 0}
+                    />
+                    <Label htmlFor="sendToAll" className="text-sm cursor-pointer">
+                      Send to all subscribers ({subscribers.length})
+                    </Label>
+                  </div>
+                </div>
                 <div className="flex gap-2">
                   <Input
                     id="to"
@@ -168,8 +192,8 @@ export default function SendEmailPage() {
                     placeholder="recipient@example.com"
                     value={formState.to}
                     onChange={handleChange}
-                    required
-                    disabled={isLoading}
+                    required={!sendToAllSubscribers}
+                    disabled={isLoading || sendToAllSubscribers}
                     className="flex-1"
                   />
                   <select
@@ -179,7 +203,7 @@ export default function SendEmailPage() {
                         setFormState((prev) => ({ ...prev, to: e.target.value }))
                       }
                     }}
-                    disabled={loadingSubscribers || isLoading}
+                    disabled={loadingSubscribers || isLoading || sendToAllSubscribers}
                   >
                     <option value="">Select subscriber</option>
                     {subscribers.map((email) => (
@@ -189,6 +213,11 @@ export default function SendEmailPage() {
                     ))}
                   </select>
                 </div>
+                {sendToAllSubscribers && (
+                  <p className="text-sm text-muted-foreground mt-1">
+                    Email will be sent to {subscribers.length} subscribers
+                  </p>
+                )}
               </div>
 
               <div className="space-y-2">

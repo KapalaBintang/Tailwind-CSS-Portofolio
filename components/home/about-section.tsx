@@ -32,13 +32,13 @@ export default function AboutSection() {
               <div className="relative bg-card rounded-2xl overflow-hidden border border-primary/10 shadow-xl">
                 <Image
                   src="/profile-1.jpg?height=600&width=600"
-                  alt="Abdul 'Aziz"
+                  alt="'Abdul 'Aziz"
                   width={1000}
                   height={1000}
                   className="w-full h-auto"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
-                  <h3 className="text-xl font-bold">Abdul 'Aziz</h3>
+                  <h3 className="text-xl font-bold">'Abdul 'Aziz</h3>
                   <p className="text-sm opacity-90">Fullstack Developer</p>
                 </div>
               </div>
@@ -61,7 +61,7 @@ export default function AboutSection() {
             </h3>
 
             <p className="text-muted-foreground">
-              Hello! I'm Abdul 'Aziz, a dedicated fullstack developer with expertise in modern web technologies. I enjoy
+              Hello! I'm 'Abdul 'Aziz, a dedicated fullstack developer with expertise in modern web technologies. I enjoy
               creating efficient, scalable, and user-friendly applications that solve real-world problems.
             </p>
 
