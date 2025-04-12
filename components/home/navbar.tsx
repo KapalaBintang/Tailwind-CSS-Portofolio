@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
-import DownloadResumeButton from "./download-resume-button"
+import DownloadResumeButton from "../ui/download-resume-button"
 import { usePathname } from "next/navigation"
 
 export default function Navbar() {
