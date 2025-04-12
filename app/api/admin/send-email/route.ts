@@ -1,6 +1,5 @@
 import { type NextRequest, NextResponse } from "next/server"
 import nodemailer from "nodemailer"
-import { isAdmin } from "@/lib/auth-utils"
 
 // Configure nodemailer
 const transporter = nodemailer.createTransport({
@@ -15,12 +14,6 @@ const transporter = nodemailer.createTransport({
 
 export async function POST(request: NextRequest) {
   try {
-    // Check if user is authenticated and admin
-    const isUserAdmin = await isAdmin()
-    if (!isUserAdmin) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-    }
-
     // Get form data with files
     const formData = await request.formData()
 

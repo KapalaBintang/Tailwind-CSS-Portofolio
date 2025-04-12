@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input"
 import Link from "next/link"
 import { useState } from "react"
 import { subscribeToNewsletter } from "@/lib/client-api"
-import { socialLinks } from "@/data/socialMedia"
+import { socialLinks } from "@/datas/socialMedia"
 
 export default function Footer() {
   const [email, setEmail] = useState("")

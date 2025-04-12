@@ -119,7 +119,7 @@ export default function SendEmailPage() {
           <h1 className="text-3xl font-bold">Send Email</h1>
         </div>
 
-        <Card className="max-w-4xl mx-auto">
+        <Card className="w-full">
           <CardHeader>
             <CardTitle>Compose Email</CardTitle>
             <CardDescription>Send emails to subscribers or specific email addresses</CardDescription>

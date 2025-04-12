@@ -33,6 +33,15 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/apple-touch-icon-precomposed.png",
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -54,7 +63,7 @@ export const metadata: Metadata = {
     title: "Abdul 'Aziz | Fullstack Developer & Web Engineer",
     description: "Professional portfolio of Abdul 'Aziz, a skilled Fullstack Developer specializing in modern web technologies, React, Next.js, and full-stack development solutions.",
     images: ["/og-image.jpg"],
-    creator: "@abdulaziz",
+    creator: undefined,
   },
   viewport: {
     width: "device-width",
