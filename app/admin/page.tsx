@@ -9,24 +9,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { db } from "@/lib/firebase"
 import { collection, getDocs, query, orderBy, limit } from "firebase/firestore"
-import AdminNavbar from "@/components/admin-navbar"
+import AdminNavbar from "@/components/admin/admin-navbar"
 
-interface ContactSubmission {
-  id: string
-  name: string
-  email: string
-  subject: string
-  message: string
-  createdAt: any
-  status: string
-}
-
-interface Subscriber {
-  id: string
-  email: string
-  createdAt: any
-  status: string
-}
+// import types
+import { ContactSubmission } from "@/types/Contact"
+import { Subscriber } from "@/types/Subscriber"
 
 export default function AdminDashboard() {
   const [contactSubmissions, setContactSubmissions] = useState<ContactSubmission[]>([])

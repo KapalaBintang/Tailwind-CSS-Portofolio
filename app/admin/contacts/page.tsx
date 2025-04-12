@@ -1,111 +1,143 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { db } from "@/lib/firebase"
-import { collection, getDocs, query, orderBy, doc, updateDoc } from "firebase/firestore"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Input } from "@/components/ui/input"
-import AdminNavbar from "@/components/admin-navbar"
-import { Eye, Search, RefreshCw } from "lucide-react"
+import { useState, useEffect } from "react";
+import { db } from "@/lib/firebase";
+import {
+  collection,
+  getDocs,
+  query,
+  orderBy,
+  doc,
+  updateDoc,
+} from "firebase/firestore";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import AdminNavbar from "@/components/admin/admin-navbar";
+import { Eye, Search, RefreshCw } from "lucide-react";
 
-interface ContactSubmission {
-  id: string
-  name: string
-  email: string
-  subject: string
-  message: string
-  createdAt: any
-  status: string
-}
+// import types
+import { ContactSubmission } from "@/types/Contact";
 
 export default function ContactsPage() {
-  const [contacts, setContacts] = useState<ContactSubmission[]>([])
-  const [filteredContacts, setFilteredContacts] = useState<ContactSubmission[]>([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [searchTerm, setSearchTerm] = useState("")
-  const [statusFilter, setStatusFilter] = useState("all")
+  const [contacts, setContacts] = useState<ContactSubmission[]>([]);
+  const [filteredContacts, setFilteredContacts] = useState<ContactSubmission[]>(
+    []
+  );
+  const [isLoading, setIsLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [statusFilter, setStatusFilter] = useState("all");
+  const [isViewing, setIsViewing] = useState(false);
+  const [selectedContact, setSelectedContact] =
+    useState<ContactSubmission | null>(null);
 
   const fetchContacts = async () => {
-    setIsLoading(true)
+    setIsLoading(true);
     try {
-      const contactsQuery = query(collection(db, "contactSubmissions"), orderBy("createdAt", "desc"))
-      const snapshot = await getDocs(contactsQuery)
+      const contactsQuery = query(
+        collection(db, "contactSubmissions"),
+        orderBy("createdAt", "desc")
+      );
+      const snapshot = await getDocs(contactsQuery);
       const contactsData = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
-      })) as ContactSubmission[]
+      })) as ContactSubmission[];
 
-      setContacts(contactsData)
-      setFilteredContacts(contactsData)
+      setContacts(contactsData);
+      setFilteredContacts(contactsData);
     } catch (error) {
-      console.error("Error fetching contacts:", error)
+      console.error("Error fetching contacts:", error);
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   useEffect(() => {
-    fetchContacts()
-  }, [])
+    fetchContacts();
+  }, []);
 
   useEffect(() => {
     // Apply filters
-    let result = contacts
+    let result = contacts;
 
     // Apply search filter
     if (searchTerm) {
-      const term = searchTerm.toLowerCase()
+      const term = searchTerm.toLowerCase();
       result = result.filter(
         (contact) =>
           contact.name.toLowerCase().includes(term) ||
           contact.email.toLowerCase().includes(term) ||
           contact.subject.toLowerCase().includes(term) ||
-          contact.message.toLowerCase().includes(term),
-      )
+          contact.message.toLowerCase().includes(term)
+      );
     }
 
     // Apply status filter
     if (statusFilter !== "all") {
-      result = result.filter((contact) => contact.status === statusFilter)
+      result = result.filter((contact) => contact.status === statusFilter);
     }
 
-    setFilteredContacts(result)
-  }, [searchTerm, statusFilter, contacts])
+    setFilteredContacts(result);
+  }, [searchTerm, statusFilter, contacts]);
 
   const handleStatusChange = async (contactId: string, newStatus: string) => {
     try {
-      const contactRef = doc(db, "contactSubmissions", contactId)
+      const contactRef = doc(db, "contactSubmissions", contactId);
       await updateDoc(contactRef, {
         status: newStatus,
-      })
+      });
 
       // Update local state
       setContacts((prevContacts) =>
-        prevContacts.map((contact) => (contact.id === contactId ? { ...contact, status: newStatus } : contact)),
-      )
+        prevContacts.map((contact) =>
+          contact.id === contactId ? { ...contact, status: newStatus } : contact
+        )
+      );
     } catch (error) {
-      console.error("Error updating contact status:", error)
+      console.error("Error updating contact status:", error);
     }
-  }
+  };
 
   const formatDate = (timestamp: any) => {
-    if (!timestamp) return "N/A"
+    if (!timestamp) return "N/A";
 
     try {
-      const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp)
+      const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
       return new Intl.DateTimeFormat("en-US", {
         year: "numeric",
         month: "short",
         day: "numeric",
         hour: "2-digit",
         minute: "2-digit",
-      }).format(date)
+      }).format(date);
     } catch (error) {
-      return "Invalid date"
+      return "Invalid date";
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -123,7 +155,9 @@ export default function ContactsPage() {
         <Card className="mb-8">
           <CardHeader>
             <CardTitle>Manage Contact Submissions</CardTitle>
-            <CardDescription>View and manage messages from your contact form</CardDescription>
+            <CardDescription>
+              View and manage messages from your contact form
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="flex flex-col sm:flex-row gap-4 mb-6">
@@ -156,7 +190,9 @@ export default function ContactsPage() {
             ) : filteredContacts.length === 0 ? (
               <div className="text-center py-8 text-muted-foreground">
                 <p>No contact submissions found</p>
-                {searchTerm || statusFilter !== "all" ? <p className="mt-2">Try adjusting your filters</p> : null}
+                {searchTerm || statusFilter !== "all" ? (
+                  <p className="mt-2">Try adjusting your filters</p>
+                ) : null}
               </div>
             ) : (
               <div className="overflow-x-auto">
@@ -173,15 +209,22 @@ export default function ContactsPage() {
                   </thead>
                   <tbody>
                     {filteredContacts.map((contact) => (
-                      <tr key={contact.id} className="border-b hover:bg-muted/50">
+                      <tr
+                        key={contact.id}
+                        className="border-b hover:bg-muted/50"
+                      >
                         <td className="py-3 px-2">{contact.name}</td>
                         <td className="py-3 px-2">{contact.email}</td>
                         <td className="py-3 px-2">{contact.subject}</td>
-                        <td className="py-3 px-2">{formatDate(contact.createdAt)}</td>
+                        <td className="py-3 px-2">
+                          {formatDate(contact.createdAt)}
+                        </td>
                         <td className="py-3 px-2">
                           <Select
                             value={contact.status}
-                            onValueChange={(value) => handleStatusChange(contact.id, value)}
+                            onValueChange={(value) =>
+                              handleStatusChange(contact.id, value)
+                            }
                           >
                             <SelectTrigger className="h-8 w-[100px]">
                               <SelectValue />
@@ -194,10 +237,77 @@ export default function ContactsPage() {
                           </Select>
                         </td>
                         <td className="py-3 px-2">
-                          <Button variant="ghost" size="sm">
-                            <Eye className="h-4 w-4 mr-1" />
-                            View
-                          </Button>
+                          <Dialog>
+                            <DialogTrigger asChild>
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                onClick={() => {
+                                  setSelectedContact(contact);
+                                  setIsViewing(true);
+                                }}
+                              >
+                                <Eye className="h-4 w-4 mr-1" />
+                                View
+                              </Button>
+                            </DialogTrigger>
+
+                            <DialogContent className="p-8 max-w-xs sm:max-w-xl rounded-lg shadow-lg">
+                              <DialogHeader>
+                                <DialogTitle className="text-xl font-semibold text-primary">
+                                  View Contact Submission
+                                </DialogTitle>
+                                <DialogDescription className="mt-2 text-muted-foreground">
+                                  Here are the details of the contact submission
+                                  you selected.
+                                </DialogDescription>
+                              </DialogHeader>
+
+                              {/* Informasi Umum */}
+                              <div className="mt-6 space-y-3">
+                                <div className="flex justify-between">
+                                  <span className="font-medium">Name:</span>
+                                  <span>{selectedContact?.name}</span>
+                                </div>
+                                <div className="flex justify-between">
+                                  <span className="font-medium">Email:</span>
+                                  <span>{selectedContact?.email}</span>
+                                </div>
+                                <div className="flex justify-between">
+                                  <span className="font-medium">Date:</span>
+                                  <span>
+                                    {formatDate(selectedContact?.createdAt)}
+                                  </span>
+                                </div>
+                              </div>
+
+                              {/* Subject dan Message */}
+                              <div className="mt-8 space-y-4 border-t pt-6">
+                                <div>
+                                  <span className="block font-medium mb-1">
+                                    Subject:
+                                  </span>
+                                  <div className="bg-muted p-3 rounded-md break-words">
+                                    {selectedContact?.subject}
+                                  </div>
+                                </div>
+                                <div>
+                                  <span className="block font-medium mb-1">
+                                    Message:
+                                  </span>
+                                  <div className="bg-muted p-3 rounded-md whitespace-pre-wrap break-words max-h-60 overflow-y-auto">
+                                    {selectedContact?.message}
+                                  </div>
+                                </div>
+                              </div>
+
+                              <DialogFooter className="mt-6">
+                                <DialogClose className="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/80">
+                                  Close
+                                </DialogClose>
+                              </DialogFooter>
+                            </DialogContent>
+                          </Dialog>
                         </td>
                       </tr>
                     ))}
@@ -209,6 +319,5 @@ export default function ContactsPage() {
         </Card>
       </main>
     </div>
-  )
+  );
 }
-

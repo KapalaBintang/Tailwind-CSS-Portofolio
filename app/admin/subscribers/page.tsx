@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Input } from "@/components/ui/input"
-import AdminNavbar from "@/components/admin-navbar"
+import AdminNavbar from "@/components/admin/admin-navbar"
 import { Search, RefreshCw, Trash2 } from "lucide-react"
 import {
   AlertDialog,
@@ -20,12 +20,8 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
 
-interface Subscriber {
-  id: string
-  email: string
-  createdAt: any
-  status: string
-}
+// import types
+import { Subscriber } from "@/types/Subscriber"
 
 export default function SubscribersPage() {
   const [subscribers, setSubscribers] = useState<Subscriber[]>([])

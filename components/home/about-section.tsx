@@ -2,7 +2,7 @@
 
 import { Code2, GraduationCap, Briefcase, History, BookOpen, Gamepad2, Dumbbell, Camera } from "lucide-react"
 import Image from "next/image"
-import DownloadResumeButton from "./download-resume-button"
+import DownloadResumeButton from "../ui/download-resume-button"
 
 export default function AboutSection() {
   return (

@@ -1,15 +1,15 @@
 "use client"
 
 import { useEffect } from "react"
-import HeroSection from "@/components/hero-section"
-import AboutSection from "@/components/about-section"
-import ExperienceSection from "@/components/experience-section"
-import TechStack from "@/components/tech-stack"
-import ContactSection from "@/components/contact-section"
-import Footer from "@/components/footer"
-import Navbar from "@/components/navbar"
+import HeroSection from "@/components/home/hero-section"
+import AboutSection from "@/components/home/about-section"
+import ExperienceSection from "@/components/home/experience-section"
+import TechStack from "@/components/home/tech-stack"
+import ContactSection from "@/components/home/contact-section"
+import Footer from "@/components/home/footer"
+import Navbar from "@/components/home/navbar"
+import PortfolioSection from "@/components/home/portfolio-section"
 import { useTheme } from "next-themes"
-import PortfolioSection from "@/components/portfolio-section"
 
 export default function Home() {
   // Force theme to be applied on initial load
