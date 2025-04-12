@@ -23,6 +23,12 @@ const nextConfig = {
   },
   // Add this to suppress hydration warnings
   reactStrictMode: false,
+  // Suppress hydration warnings for fdprocessedid attributes
+  compiler: {
+    styledComponents: true,
+    // This will ignore specific attributes during hydration to prevent mismatches
+    reactRemoveProperties: { properties: ['^fdprocessedid$'] }
+  }
 }
 
 mergeConfig(nextConfig, userConfig)
