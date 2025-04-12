@@ -67,18 +67,15 @@ export const signOut = async () => {
 }
 
 // Get current user
-export const getCurrentUser = (): Promise<User | null> => {
-  return new Promise((resolve) => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      unsubscribe()
-      resolve(user)
-    })
-  })
+export const getCurrentUser = async (): Promise<User | null> => {
+  console.log("Auth:", auth.currentUser)
+  return auth.currentUser
 }
 
 // Check if user is admin
 export const isAdmin = async (): Promise<boolean> => {
   const user = await getCurrentUser()
+  console.log("User:", user)
   // In a real app, you would check if the user has admin role
   // For now, we'll consider any authenticated user as admin
   return !!user

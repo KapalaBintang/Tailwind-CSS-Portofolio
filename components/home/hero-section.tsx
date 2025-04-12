@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { socialLinks } from "@/data/socialMedia"
+import { socialLinks } from "@/datas/socialMedia"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 

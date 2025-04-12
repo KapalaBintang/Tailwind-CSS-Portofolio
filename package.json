@@ -1,5 +1,5 @@
 {
-  "name": "my-v0-project",
+  "name": "porto-web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -47,7 +47,7 @@
     "firebase": "latest",
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",
-    "next": "15.1.0",
+    "next": "14.2.16",
     "next-themes": "latest",
     "nodemailer": "latest",
     "quill": "^2.0.3",
@@ -66,6 +66,7 @@
   },
   "devDependencies": {
     "@types/node": "^22",
+    "@types/nodemailer": "^6.4.17",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "next-sitemap": "^4.2.3",

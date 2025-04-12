@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import Link from "next/link"
 import { submitContactForm } from "@/lib/client-api"
-import { socialLinks } from "@/data/socialMedia"
+import { socialLinks } from "@/datas/socialMedia"
 
 export default function ContactSection() {
   const [formState, setFormState] = useState({
