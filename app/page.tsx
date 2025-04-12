@@ -33,9 +33,7 @@ export default function Home() {
       <AboutSection />
       <ExperienceSection />
       <TechStack />
-
       <PortfolioSection />
-
       <ContactSection />
       <Footer />
     </main>
