@@ -1,10 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { Bold, Italic, List, ListOrdered, Link as LinkIcon } from "lucide-react";
-import { useTheme } from "next-themes";
+import dynamic from "next/dynamic";
+import "react-quill/dist/quill.snow.css";
 
 interface EditorProps {
   value: string;
@@ -13,135 +11,84 @@ interface EditorProps {
   className?: string;
 }
 
-export default function Editor({ value, onChange, disabled, className }: EditorProps) {
-  const [text, setText] = useState(value);
-  const { theme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+const modules = {
+  toolbar: [[{ header: [1, 2, 3, 4, 5, 6, false] }], ["bold", "italic", "underline", "strike", "blockquote"], [{ align: ["right", "center", "justify"] }], [{ list: "ordered" }, { list: "bullet" }], ["link", "image"]],
+};
 
-  // Wait for component to mount to avoid hydration mismatch
+// Dynamically import ReactQuill with SSR disabled
+const ReactQuill = dynamic(() => import("react-quill"), {
+  ssr: false,
+  loading: () => <div className="min-h-[350px] border rounded-lg p-4 bg-gray-50">Loading editor...</div>,
+});
+
+export default function Editor({ value, onChange, disabled, className }: EditorProps) {
+  // Initialize with empty string to avoid hydration issues
+  const [mounted, setMounted] = useState(false);
+  
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const newValue = e.target.value;
-    setText(newValue);
-    onChange(newValue);
-  };
-
-  const insertFormat = (format: string) => {
-    const textarea = document.querySelector('textarea');
-    if (!textarea) return;
-    
-    const start = textarea.selectionStart;
-    const end = textarea.selectionEnd;
-    const selectedText = text.substring(start, end);
-    
-    let newText = text;
-    let newCursorPos = end;
-    
-    switch (format) {
-      case 'bold':
-        newText = text.substring(0, start) + `**${selectedText}**` + text.substring(end);
-        newCursorPos = end + 4;
-        break;
-      case 'italic':
-        newText = text.substring(0, start) + `*${selectedText}*` + text.substring(end);
-        newCursorPos = end + 2;
-        break;
-      case 'ul':
-        newText = text.substring(0, start) + `\n- ${selectedText}` + text.substring(end);
-        newCursorPos = end + 3;
-        break;
-      case 'ol':
-        newText = text.substring(0, start) + `\n1. ${selectedText}` + text.substring(end);
-        newCursorPos = end + 4;
-        break;
-      case 'link':
-        newText = text.substring(0, start) + `[${selectedText}](url)` + text.substring(end);
-        newCursorPos = end + 7;
-        break;
-    }
-    
-    setText(newText);
-    onChange(newText);
-    
-    // Set focus back to textarea and restore cursor position
-    setTimeout(() => {
-      textarea.focus();
-      textarea.setSelectionRange(newCursorPos, newCursorPos);
-    }, 0);
-  };
-
-  // Don't render UI until mounted to avoid hydration mismatch
-  if (!mounted) {
-    return <div className="min-h-[350px] border rounded-lg p-4 bg-background">Loading editor...</div>;
-  }
-
   return (
-    <div className={`space-y-2 ${className}`}>
-      <div className="flex items-center gap-1 p-2 border rounded-t-lg bg-card">
-        <Button 
-          type="button" 
-          variant="ghost" 
-          size="sm" 
-          onClick={() => insertFormat('bold')}
-          disabled={disabled}
-          className="text-foreground hover:text-foreground"
-        >
-          <Bold className="h-4 w-4" />
-        </Button>
-        <Button 
-          type="button" 
-          variant="ghost" 
-          size="sm" 
-          onClick={() => insertFormat('italic')}
-          disabled={disabled}
-          className="text-foreground hover:text-foreground"
-        >
-          <Italic className="h-4 w-4" />
-        </Button>
-        <Button 
-          type="button" 
-          variant="ghost" 
-          size="sm" 
-          onClick={() => insertFormat('ul')}
-          disabled={disabled}
-          className="text-foreground hover:text-foreground"
-        >
-          <List className="h-4 w-4" />
-        </Button>
-        <Button 
-          type="button" 
-          variant="ghost" 
-          size="sm" 
-          onClick={() => insertFormat('ol')}
-          disabled={disabled}
-          className="text-foreground hover:text-foreground"
-        >
-          <ListOrdered className="h-4 w-4" />
-        </Button>
-        <Button 
-          type="button" 
-          variant="ghost" 
-          size="sm" 
-          onClick={() => insertFormat('link')}
-          disabled={disabled}
-          className="text-foreground hover:text-foreground"
-        >
-          <LinkIcon className="h-4 w-4" />
-        </Button>
-      </div>
-      <Textarea
-        value={text}
-        onChange={handleChange}
-        disabled={disabled}
-        placeholder="Write your content here..."
-        className="min-h-[350px] rounded-t-none border-t-0 resize-y bg-card text-foreground"
-      />
-      <div className="text-xs text-muted-foreground">
-        Supports Markdown: **bold**, *italic*, [link](url), - list items, 1. numbered items
-      </div>
+    <div className={className}>
+      <style jsx global>{`
+        .ql-toolbar {
+          border-top-left-radius: 0.5rem;
+          border-top-right-radius: 0.5rem;
+          border-color: rgb(var(--border));
+          background-color: white;
+        }
+        .ql-container {
+          border-bottom-left-radius: 0.5rem;
+          border-bottom-right-radius: 0.5rem;
+          border-color: rgb(var(--border));
+          background-color: white;
+          color: black;
+          font-family: inherit;
+          font-size: 1rem;
+          line-height: 1.5;
+        }
+        .ql-editor {
+          min-height: 350px;
+        }
+        .ql-editor.ql-snow {
+          color: black;
+        }
+        .ql-picker {
+          color: black;
+        }
+        .ql-stroke {
+          stroke: black;
+        }
+        .ql-fill {
+          fill: black;
+        }
+        .ql-picker-options {
+          background-color: white;
+          color: black;
+          border-color: rgb(var(--border));
+        }
+        .ql-active {
+          color: rgb(var(--primary));
+        }
+        .ql-active .ql-stroke {
+          stroke: rgb(var(--primary));
+        }
+        .ql-active .ql-fill {
+          fill: rgb(var(--primary));
+        }
+      `}</style>
+      {mounted && (
+        <ReactQuill
+          theme="snow"
+          value={value}
+          onChange={onChange}
+          modules={modules}
+          readOnly={disabled}
+          placeholder="Write your content here..."
+          className="bg-white rounded-lg w-full sm:h-[250px] md:h-[300px] lg:h-[350px] xl:h-[400px] pb-12"
+        />
+      )}
     </div>
   );
 }
