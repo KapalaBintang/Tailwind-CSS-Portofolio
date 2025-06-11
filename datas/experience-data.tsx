@@ -18,7 +18,7 @@ export const experiences = [
     {
       title: "Backend Developer Intern",
       company: "Minilemon Studio",
-      period: "2024 - Present",
+      period: "2025 - Present",
       description:
         "Developing and maintaining backend services and APIs. Working with a team of developers to create scalable and efficient solutions for various projects.",
       skills: ["Node.js", "Express", "Next.js", "REST API", "Docker"],
