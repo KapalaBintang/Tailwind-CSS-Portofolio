@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     siteName: "Abdul 'Aziz Portfolio",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/profile-3.jpg",
         width: 1200,
         height: 630,
         alt: "Abdul 'Aziz - Fullstack Developer",
