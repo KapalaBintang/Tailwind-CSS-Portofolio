@@ -20,7 +20,7 @@ export const experiences = [
       period: "2025 - Present",
       description:
         "Developing and maintaining backend services and APIs. Working with a team of developers to create scalable and efficient solutions for various projects.",
-      skills: ["Node.js", "Express", "Next.js", "REST API", "Docker"],
+      skills: ["Node.js", "Express", "Python", "Fastapi", "Next.js", "REST API", "Docker"],
       icon: <Building className="h-5 w-5" />,
     },
   ]
