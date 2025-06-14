@@ -1,30 +1,35 @@
 export const projects = [
   {
-    id: "hmifunsri-2025",
-    title: "HMIF UNSRI 2025",
-    description:
-      "Sebuah platform web resmi HMIF UNSRI 2025 yang menampilkan profil organisasi, program kerja, informasi akademik, serta wadah aspirasi mahasiswa. Dirancang dengan antarmuka modern dan didukung sistem manajemen berbasis Firebase untuk kebutuhan admin.",
-    image: "/portofolio-image/hmifunsri-2025.jpg?height=600&width=1200",
-    technologies: ["Next.js", "Firebase", "Tailwind CSS", "Nodemailer"],
-    features: [
-      "Landing page interaktif berisi perkenalan umum HMIF UNSRI 2025",
-      "Halaman 'About Us' untuk menjelaskan visi, misi, dan struktur organisasi",
-      "Halaman profil menampilkan anggota, BPH, serta dinas dan divisi",
-      "Halaman Proker untuk menampilkan program kerja tiap dinas dan divisi",
-      "Halaman Akademik berisi informasi lomba, beasiswa, dan seminar/webinar",
-      "Fitur Aspirasi untuk mengirimkan masukan atau saran kepada HMIF",
-      "Halaman admin khusus dengan autentikasi Firebase",
-      "Manajemen data dinas, divisi, program kerja, kompetisi, beasiswa, seminar, dan anggota",
-      "Sistem subscription dengan pengiriman email massal menggunakan Nodemailer",
-      "Manajemen konten dan fitur sepenuhnya berbasis Firebase",
-    ],
-    category: "Full Stack Development",
-    year: "2025",
-    links: {
-      live: "https://www.hmifunsri.com/",
-      github: "https://github.com/HMIF-UNSRI",
-    },
-  },
+  id: "hmifunsri-2025",
+  title: "HMIF UNSRI 2025",
+  description: "An official web platform for HMIF UNSRI 2025 that serves as a profile and information hub for the organization. It features an interactive landing page, organizational structure, work programs, academic opportunities, and a public aspiration submission system. Admin functionalities are secured and managed using Firebase.",
+  image: "/portofolio-image/hmifunsri-2025.jpg?height=600&width=1200",
+  technologies: ["Next.js", "Firebase", "Tailwind CSS", "Nodemailer"],
+  features: [
+    "Interactive landing page introducing HMIF UNSRI 2025",
+    "About Us section highlighting vision, mission, and structure",
+    "Member profile page showcasing BPH, departments, and divisions",
+    "Work Program page detailing activities of each department and division",
+    "Academic page listing competitions, scholarships, and seminars/webinars",
+    "Aspiration page allowing users to submit feedback to HMIF",
+    "Admin-only dashboard with Firebase authentication",
+    "Department management system (admin-only)",
+    "Division management system (admin-only)",
+    "Program/work agenda management (admin-only)",
+    "Competition management (admin-only)",
+    "Scholarship management (admin-only)",
+    "Seminar/webinar management (admin-only)",
+    "Member management (admin-only)",
+    "Subscription management with mass email delivery via Nodemailer (admin-only)",
+    "Fully integrated content management using Firebase"
+  ],
+  category: "Full Stack Development",
+  year: "2025",
+  links: {
+    live: "https://www.hmifunsri.com/",
+    github: "https://github.com/HMIF-UNSRI"
+  }
+},
   {
     id: "jurisconsult",
     title: "JurisConsult",
