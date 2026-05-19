@@ -1,33 +1,27 @@
-"use client"
+"use client";
 
-import { Briefcase, ExternalLink } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import { Briefcase, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 // import experiences data
-import {experiences} from "@/datas/experience-data"
+import { experiences } from "@/datas/experience-data";
 
 export default function ExperienceSection() {
- 
-
   return (
     <section id="experience" className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="inline-block px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full mb-4">
-            My Journey
-          </span>
+          <span className="inline-block px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full mb-4">My Journey</span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Professional{" "}
+            Building Products &{" "}
             <span className="text-primary relative inline-block">
-              Experience
+              Real-World Solutions
               <span className="absolute -bottom-2 left-0 w-full h-1 bg-primary/30 rounded-full"></span>
             </span>
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            My professional journey as a developer, showcasing my work experience and career growth.
-          </p>
+          <p className="text-muted-foreground max-w-2xl mx-auto">Building modern web applications, scalable systems, and AI-powered solutions through real-world projects and collaborations.</p>
         </div>
 
         <div className="relative">
@@ -37,12 +31,7 @@ export default function ExperienceSection() {
           {/* Experience items */}
           <div className="relative z-10">
             {experiences.map((experience, index) => (
-              <div
-                key={index}
-                className={`flex flex-col md:flex-row gap-8 mb-16 last:mb-0 ${
-                  index % 2 === 1 ? "md:flex-row-reverse" : ""
-                }`}
-              >
+              <div key={index} className={`flex flex-col md:flex-row gap-8 mb-16 last:mb-0 ${index % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
                 {/* Timeline dot */}
                 <div className="hidden md:flex md:items-center md:justify-center absolute left-1/2 transform -translate-x-1/2 w-12 h-12">
                   <span className="absolute w-4 h-4 rounded-full bg-primary border-4 border-background"></span>
@@ -50,15 +39,9 @@ export default function ExperienceSection() {
 
                 {/* Content */}
                 <div className={`md:w-1/2 ${index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
-                  <div
-                    className={`bg-card hover:bg-card/80 transition-colors rounded-xl p-6 border border-border shadow-lg ${
-                      index % 2 === 0 ? "md:rounded-tr-none" : "md:rounded-tl-none"
-                    }`}
-                  >
+                  <div className={`bg-card hover:bg-card/80 transition-colors rounded-xl p-6 border border-border shadow-lg ${index % 2 === 0 ? "md:rounded-tr-none" : "md:rounded-tl-none"}`}>
                     <div className={`flex items-center gap-2 mb-2 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
-                      <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary">
-                        {experience.icon}
-                      </span>
+                      <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary">{experience.icon}</span>
                       <span className="text-sm font-medium text-primary">{experience.period}</span>
                     </div>
 
@@ -70,29 +53,44 @@ export default function ExperienceSection() {
 
                     <p className="text-foreground/80 mb-4">{experience.description}</p>
 
-                    <div className={`flex flex-wrap gap-2 mb-4 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
-                      {experience.skills.map((skill, skillIndex) => (
-                        <span
-                          key={skillIndex}
-                          className="inline-block px-2 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full hover:bg-primary/20 transition-colors cursor-default"
-                        >
-                          {skill}
-                        </span>
+                    <div className={`mb-3 ${index % 2 === 0 ? "md:text-right" : ""}`}>
+                      <h4 className="text-sm font-semibold text-primary">Key Contributions</h4>
+                    </div>
+
+                    <div className="space-y-2 mb-4">
+                      {experience.impact.map((item, i) => (
+                        <div key={i} className={`flex items-start gap-2 text-sm text-muted-foreground ${index % 2 === 0 ? "md:justify-end" : ""}`}>
+                          <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0"></span>
+
+                          <span>{item}</span>
+                        </div>
                       ))}
                     </div>
 
-                    {experience.link && (
-                      <div className={`mt-4 ${index % 2 === 0 ? "md:text-right" : ""}`}>
-                        <Link href={experience.link.url} target="_blank" rel="noopener noreferrer">
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            className="group border-primary/20 hover:border-primary hover:bg-primary/5"
-                          >
-                            {experience.link.text}
-                            <ExternalLink className="ml-2 h-3 w-3" />
-                          </Button>
-                        </Link>
+                    {experience.skills && experience.skills.length > 0 && (
+                      <div className="space-y-3">
+                        <h4 className={`text-sm font-semibold text-primary ${index % 2 === 0 ? "md:text-right" : ""}`}>Tech Stack</h4>
+
+                        <div className={`flex flex-wrap gap-2 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
+                          {experience.skills.map((skill, i) => (
+                            <div
+                              key={i}
+                              className="
+          px-3 py-1.5
+          rounded-lg
+          bg-background
+          border border-border
+          text-xs font-medium
+          shadow-sm
+          hover:border-primary/30
+          hover:bg-primary/5
+          transition-all
+        "
+                            >
+                              {skill}
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     )}
                   </div>
@@ -109,16 +107,10 @@ export default function ExperienceSection() {
         <div className="mt-16 text-center">
           <div className="inline-block bg-card border border-border rounded-xl p-8 shadow-lg relative overflow-hidden">
             <h3 className="text-xl font-bold mb-2 relative">Interested in working together?</h3>
-            <p className="text-muted-foreground mb-4 relative">
-              I'm always open to discussing new projects and opportunities.
-            </p>
+            <p className="text-muted-foreground mb-4 relative">I'm always open to discussing new projects and opportunities.</p>
             <div className="flex flex-wrap justify-center gap-4 relative">
-            <Link href="https://www.instagram.com/abdul_aziz_2412/" target="_blank">
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20">
-              
-                Contact Me 👋
-              
-              </Button>
+              <Link href="https://wa.me/62895637594068" target="_blank">
+                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20">Start a Project</Button>
               </Link>
               <Link href="/resume.pdf" target="_blank" download="Abdul_Aziz_Resume.pdf">
                 <Button variant="outline" className="border-primary/20 hover:border-primary hover:bg-primary/5">
@@ -130,6 +122,5 @@ export default function ExperienceSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
