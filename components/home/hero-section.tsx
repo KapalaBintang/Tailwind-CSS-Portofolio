@@ -21,10 +21,10 @@ export default function HeroSection() {
                 'Abdul 'Aziz
                 <span className="absolute -bottom-2 left-0 w-full h-1 bg-primary/30 rounded-full"></span>
               </span>
-              <span className="block mt-2">Fullstack Developer</span>
+              <span className="block mt-2">I Build Modern SaaS & AI-Powered Applications</span>
             </h1>
 
-            <p className="text-lg text-muted-foreground max-w-lg">I build exceptional and accessible digital experiences for the web. Focused on creating clean, user-friendly interfaces with modern technologies.</p>
+            <p className="text-lg text-muted-foreground max-w-lg">I help businesses turn ideas into scalable web platforms and AI-powered products with fast, modern, and user-focused development.</p>
 
             <div className="flex flex-wrap gap-4">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 group">
@@ -33,10 +33,8 @@ export default function HeroSection() {
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="border-primary/20 hover:border-primary/50 hover:bg-primary/5">
-                <Link href="https://www.instagram.com/abdul_aziz_2412/" target="_blank" rel="noopener noreferrer" className="flex items-center">
-                  Contact Me
-                </Link>
+              <Button size="lg" variant="outline">
+                <Link href="mailto:bintangkapala@gmail.com">Let&apos;s Build Your Product</Link>
               </Button>
             </div>
 
@@ -66,7 +64,7 @@ export default function HeroSection() {
               <div className="absolute -bottom-6 -right-6 bg-background shadow-lg rounded-lg p-4 border border-primary/20">
                 <div className="flex items-center space-x-2">
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  <span className="font-medium">Available for work</span>
+                  <span className="font-medium">Available for Freelance & AI Projects</span>
                 </div>
               </div>
             </div>

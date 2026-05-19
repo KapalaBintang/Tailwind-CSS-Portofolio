@@ -1,23 +1,19 @@
-"use client"
+"use client";
 
-import { ExternalLink, Github, Code2, Globe, Layers } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import Image from "next/image"
+import { ExternalLink, Github, Code2, Globe, Layers } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import Image from "next/image";
 
 // import portofolio datas
-import { projects } from "@/datas/portofolio-data"
+import { projects } from "@/datas/portofolio-data";
 
 export default function PortfolioSection() {
-
-
   return (
     <section id="portfolio" className="py-20 bg-card/30 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <span className="inline-block px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full mb-4">
-            My Work
-          </span>
+          <span className="inline-block px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full mb-4">My Work</span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Featured{" "}
             <span className="text-primary relative inline-block">
@@ -26,10 +22,7 @@ export default function PortfolioSection() {
             </span>
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Check out some of my recent projects. Each project represents my skills, creativity, and problem-solving
-            approach.
-          </p>
+          <p className="text-muted-foreground max-w-2xl mx-auto">Check out some of my recent projects. Each project represents my skills, creativity, and problem-solving approach.</p>
         </div>
 
         <div className="grid grid-cols-1 gap-16">
@@ -40,19 +33,10 @@ export default function PortfolioSection() {
                 <div className={`relative ${index % 2 === 1 ? "lg:order-2" : ""}`}>
                   <div className="relative overflow-hidden rounded-xl border border-border shadow-xl">
                     <div className="aspect-video relative overflow-hidden bg-card">
-                      <Image
-                        src={project.image || "/placeholder.svg"}
-                        alt={project.title}
-                        fill
-                        className="object-cover"
-                      />
+                      <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
                       <div className="absolute bottom-4 left-4 right-4 flex justify-between">
-                        <span className="bg-background/80 backdrop-blur-sm text-xs font-medium px-2 py-1 rounded-full">
-                          {project.category}
-                        </span>
-                        <span className="bg-primary/90 backdrop-blur-sm text-white text-xs font-medium px-2 py-1 rounded-full">
-                          {project.year}
-                        </span>
+                        <span className="bg-background/80 backdrop-blur-sm text-xs font-medium px-2 py-1 rounded-full">{project.category}</span>
+                        <span className="bg-primary/90 backdrop-blur-sm text-white text-xs font-medium px-2 py-1 rounded-full">{project.year}</span>
                       </div>
                     </div>
                   </div>
@@ -62,13 +46,30 @@ export default function PortfolioSection() {
                 <div className={index % 2 === 1 ? "lg:order-1" : ""}>
                   <div className="space-y-4">
                     <div className="flex items-center gap-2">
-                      <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary">
-                        {index === 0 ? <Code2 className="h-4 w-4" /> : <Globe className="h-4 w-4" />}
-                      </span>
+                      <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary">{index === 0 ? <Code2 className="h-4 w-4" /> : <Globe className="h-4 w-4" />}</span>
                       <h3 className="text-2xl font-bold">{project.title}</h3>
                     </div>
 
-                    <p className="text-muted-foreground">{project.description}</p>
+                    <div className="space-y-4">
+                      <p className="text-muted-foreground leading-relaxed">{project.description}</p>
+
+                      <div className="space-y-3 border-l-2 border-primary/30 pl-4">
+                        <div>
+                          <h4 className="font-semibold text-sm text-primary">Problem</h4>
+                          <p className="text-sm text-muted-foreground">{project.caseStudy.problem}</p>
+                        </div>
+
+                        <div>
+                          <h4 className="font-semibold text-sm text-primary">Solution</h4>
+                          <p className="text-sm text-muted-foreground">{project.caseStudy.solution}</p>
+                        </div>
+
+                        <div>
+                          <h4 className="font-semibold text-sm text-primary">Impact</h4>
+                          <p className="text-sm text-muted-foreground">{project.caseStudy.impact}</p>
+                        </div>
+                      </div>
+                    </div>
 
                     <div className="pt-2">
                       <h4 className="text-sm font-semibold mb-2 flex items-center">
@@ -77,10 +78,7 @@ export default function PortfolioSection() {
                       </h4>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {project.technologies.map((tech, techIndex) => (
-                          <span
-                            key={techIndex}
-                            className="inline-block px-2 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full"
-                          >
+                          <span key={techIndex} className="inline-block px-2 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">
                             {tech}
                           </span>
                         ))}
@@ -102,12 +100,16 @@ export default function PortfolioSection() {
                       </ul>
                     </div>
 
-                    <div className="pt-4">
+                    <div className="flex flex-wrap gap-3 pt-4">
                       <Link href={project.links.live} target="_blank" rel="noopener noreferrer">
-                        <Button className="bg-primary hover:bg-primary/90 text-primary-foreground group">
+                        <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
                           View Live
                           <ExternalLink className="ml-2 h-4 w-4" />
                         </Button>
+                      </Link>
+
+                      <Link href="https://wa.me/62895637594068" target="_blank">
+                        <Button variant="outline">Let&apos;s Build Something Similar</Button>
                       </Link>
                     </div>
                   </div>
@@ -118,6 +120,5 @@ export default function PortfolioSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
